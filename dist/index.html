@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/script/script.js"></script>
+    <script src="/script/script.js" defer></script>
     <link rel="stylesheet" href="/src/output.css">
-    <title>To DO App</title>
+    <link rel="shortcut icon" href="/img/icon.png" type="image/x-icon">
+    <title>To-Do-List</title>
 </head>
-<body></body>
+
+<body class="bg-slate-800 flex justify-center m-0 p-0 relative top-52 overflow-hidden">
+
+    <div 
+        class=" bg-white h-auto md:w-2/5 w-3/4 rounded-md grid place-content-center border-2 border-solid border-black ">
+
+        <div class="flex items-center my-6 justify-center text-3xl">
+            <h1 class="font-extrabold font-sans text-blue-950  align-middle mx-4">To-Do-List </h1>
+            <img class="w-8 h-8 " src="/img/to-do-list.png" alt="">
+        </div>
+
+        <div class=" flex mb-10  flex-grow">
+            <input
+                class="w-auto xl:w-80 bg-gray-200 rounded-xl p-4 text-black  border-2 border-solid border-black placeholder:text-gray-700 placeholder:font-sans placeholder:text-xs placeholder:p-4 "
+                type="text" name="task-list" placeholder="Add your task" id="">
+            <button type="submit"
+                class=" w-auto bg-orange-600 text-white px-8  -ml-4 rounded-xl  border-2 border-solid border-black hover:bg-orange-400 hover:font-bold active:bg-orange-900 ">Add</button>
+        </div>
+
+        <div class=" flex justify-between ">
+            <input type="radio" name="task" id=""><label class="font-bold" for="task">Wake Up
+            </label>
+            <img width="14px" height="5px" src="/img/cross.png" alt="">
+
+        </div>
+        <br>
+    </div>
+</body>
+
 </html>
