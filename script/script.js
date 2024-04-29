@@ -1,29 +1,46 @@
-const taskTitleList = [];
+let taskTitleList = [];
+
+window.addEventListener('load',()=>{
+    const storedTaskTitleList= localStorage.getItem('taskTitleList');
+    if (storedTaskTitleList) {
+        taskTitleList = JSON.parse(storedTaskTitleList);
+
+        generateTaskList(taskTitleList);
+    }
+})
+
 document.getElementById("add-btn").addEventListener('click', () => {
     addbuttonfunctionality();
 });
 
-document.addEventListener('keydown',(e)=>{
-if(e.key=="Enter"){
-    addbuttonfunctionality();
-}
-})
+document.addEventListener('keydown', (e) => {
+    if (e.key == "Enter") {
+        addbuttonfunctionality();
+    }
+});
 
-function addbuttonfunctionality (){
+function updateLocalStorage(){
+    localStorage.setItem('taskTitleList', JSON.stringify(taskTitleList));
+}
+
+
+function addbuttonfunctionality() {
     const inputvalue = document.getElementById('task-input').value;
-        if(!inputvalue ||inputvalue.trim()===""){
+    if (!inputvalue || inputvalue.trim() === "") {
         alert("Please enter a task");
         return;
-    }else{
-    addingInList(inputvalue);
-    generateTaskList(taskTitleList);
+    } else {
+        addingInList(inputvalue);
+        generateTaskList(taskTitleList);
+        updateLocalStorage();
     }
 }
 
 
 function deletefromList(index) {
-    taskTitleList.splice(index, 1);
+    taskTitleList.splice(index, 1); 
     generateTaskList(taskTitleList);
+    updateLocalStorage();
 
 }
 
@@ -40,7 +57,6 @@ function addingInList(inputvalue) {
 
 function generateTaskList(taskTitleList) {
     let taskDetails = '';
-    inputvalue = document.getElementById('task-input').value.value;
     taskTitleList.forEach((list, index) => {
         taskDetails += `<label id="task-title-${index}" data-index="${index}" class="font-bold flex  justify-between" for="${list}" ><input type="checkbox" data-index="${index}" onclick="checkAnimation(this.checked,this.dataset.index)" class="" id="${list}"><span class="">${list}</span> 
         <button  id="delete-btn-${list}" data-index="${index}" onclick="deletefromList(this.dataset.index)"
