@@ -12,33 +12,33 @@
 
 <body class="bg-slate-800 flex justify-center m-0 p-0  overflow-hidden">
 
-    <div 
-        class=" bg-white h-auto md:w-2/5 w-3/4 rounded-md grid place-content-center border-2 border-solid border-black absolute top-1/3">
+    <div
+        class=" bg-white h-auto p-8 w-auto rounded-md grid place-content-center border-2 border-solid border-black absolute top-1/3">
 
         <div class="flex items-center my-6 justify-center text-3xl">
             <h1 class="font-extrabold font-sans text-blue-950  align-middle mx-4">To-Do-List </h1>
             <img class="w-8 h-8 " src="/img/to-do-list.png" alt="">
         </div>
 
-        <form  class=" flex mb-10  flex-grow">
+        <div class=" flex mb-10  flex-grow">
             <input
-                class="w-auto xl:w-80 bg-gray-200 rounded-xl p-4 text-black  border-2 border-solid border-black placeholder:text-gray-700 placeholder:font-sans placeholder:text-xs placeholder:p-4 "
-                type="text" name="task-list" placeholder="Add your task" id="">
+                class="w-auto xl:w-80  bg-gray-200 rounded-xl p-4 text-black  border-2 border-solid border-black placeholder:text-gray-700 placeholder:font-sans placeholder:text-xs placeholder:p-4 "
+                type="text" placeholder="Add your task" id="task-input">
             <button type="submit"
-                class=" w-auto bg-orange-600 text-white px-8  -ml-4 rounded-xl  border-2 border-solid border-black hover:bg-orange-400 hover:font-bold active:bg-orange-900 ">Add</button>
-        </form>
-
-        <div class=" flex justify-between items-center">
-            <input type="checkbox" class="mr-2" id="task"><label class="font-bold ml-a" for="task">Wake Up
-            </label>
-            <button class="ml-auto p-1 bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white rounded">
-                <img src="/img/cross.png" alt="Delete Task" class="w-4 h-4">
-            </button>
+                class=" w-auto bg-orange-600 text-white px-8  -ml-4 rounded-xl  border-2 border-solid border-black hover:bg-orange-400 hover:font-bold active:bg-orange-900 "
+                id="add-btn" onclick="">Add</button>
         </div>
-        <br>
+
+        <div id="task-details" class="flex mb-5 flex-col ">
+            <!-- <label id="task-title" class="font-bold flex  justify-between  decoration-slice" for="task-checkbox">
+                <input type="checkbox" class="" id="task-checkbox">
+                <span class="">Wake up</span> 
+                <button id="delete-btn" class="p-1 bg-transparent hover:bg-red-500 text-red-700 font-semibold hover:text-white rounded">
+                <img src="/img/cross.png" alt="Delete Task" class="w-4 h-3">
+            </button></label>
+         -->
+        </div>
     </div>
 </body>
 
 </html>
-
-
