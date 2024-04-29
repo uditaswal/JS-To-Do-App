@@ -1,5 +1,4 @@
 const taskTitleList = [];
-
 document.getElementById("add-btn").addEventListener('click', () => {
     addbuttonfunctionality();
 });
